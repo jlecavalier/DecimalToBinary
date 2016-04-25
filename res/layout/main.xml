@@ -3,4 +3,42 @@
 			  android:layout_width="fill_parent"
 			  android:layout_height="fill_parent"
 			  android:orientation="vertical">
+	<TextView
+		 android:id="@+id/decimal_text"
+		 android:layout_height="wrap_content"
+		 android:layout_width="fill_parent"
+		 android:paddingTop="150px"
+		 android:textSize="48sp"
+		 android:layout_centerInParent="true"
+		 android:text="@string/decimal" />
+	<EditText
+    	 android:id="@+id/input_number"
+    	 android:layout_width="fill_parent"
+	     android:layout_height="wrap_content"
+	     android:paddingTop="150px"
+	     android:inputType="number" />
+	<TextView
+		 android:id="@+id/binary_text"
+		 android:layout_height="wrap_content"
+		 android:layout_width="fill_parent"
+		 android:paddingTop="150px"
+		 android:textSize="48sp"
+		 android:layout_centerInParent="true"
+		 android:text="@string/binary" />
+	<TextView
+		 android:id="@+id/output_number"
+		 android:layout_width="fill_parent"
+		 android:layout_height="wrap_content"
+		 android:paddingTop="150px"
+		 android:textSize="48sp"
+		 android:layout_centerInParent="true"
+		 android:visibility="invisible" />
+	<Button
+		 android:id="@+id/convert_button"
+		 android:layout_width="wrap_content"
+		 android:layout_height="wrap_content"
+		 android:paddingTop="150px"
+		 android:text="@string/convert"
+		 android:onClick="convert"
+		 android:layout_centerInParent="true" />
 </LinearLayout>

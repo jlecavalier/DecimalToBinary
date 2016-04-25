@@ -2,4 +2,9 @@
 <resources>
 	<!-- Misc -->
 	<string name="app_name">Decimal to Binary</string>
+	<!-- Conversion Types -->
+	<string name="decimal">Decimal:</string>
+	<string name="binary">Binary</string>
+	<!-- Buttons -->
+	<string name="convert">Convert</string>
 </resources>
