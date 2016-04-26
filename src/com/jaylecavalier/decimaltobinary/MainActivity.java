@@ -34,7 +34,17 @@ public class MainActivity extends SherlockFragmentActivity {
 	}
 
 	private String toBinary(int decimal) {
-		return "0101";
+		if (decimal == 0) {
+			return "0";
+		}
+		String binary = "";
+		int tmp = decimal;
+		while (tmp != 0) {
+			int rem = tmp % 2;
+			binary = rem + binary;
+			tmp = (int) Math.floor(tmp / 2);
+		}
+		return binary;
 	}
 
 	private void displayResult(String binary) {
