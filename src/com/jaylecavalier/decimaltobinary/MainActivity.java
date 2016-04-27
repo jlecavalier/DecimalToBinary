@@ -23,9 +23,14 @@ public class MainActivity extends SherlockFragmentActivity {
 		EditText input_etext = (EditText) findViewById(R.id.input_number);
 		if (!isEmpty(input_etext)) {
 			String input_string = input_etext.getText().toString();
-			int input = Integer.parseInt(input_string);
-			String output_string = toBinary(input);
-			displayResult(output_string);
+			try {
+				long input = Long.parseLong(input_string);
+				String output_string = toBinary(input);
+				displayResult(output_string);
+			}
+			catch (NumberFormatException e) {
+				displayResult("Cannot convert input :(");
+			}
 		}
 	}
 
@@ -33,16 +38,19 @@ public class MainActivity extends SherlockFragmentActivity {
 		return etext.getText().toString().trim().length() == 0;
 	}
 
-	private String toBinary(int decimal) {
+	private String toBinary(long decimal) {
+	    if (decimal < 0 || decimal >= Long.MAX_VALUE) {
+	    	return "Cannot convert input :(";
+	    }
 		if (decimal == 0) {
 			return "0";
 		}
 		String binary = "";
-		int tmp = decimal;
+		long tmp = decimal;
 		while (tmp != 0) {
-			int rem = tmp % 2;
+			long rem = tmp % 2;
 			binary = rem + binary;
-			tmp = (int) Math.floor(tmp / 2);
+			tmp = (long) Math.floor(tmp / 2);
 		}
 		return binary;
 	}
