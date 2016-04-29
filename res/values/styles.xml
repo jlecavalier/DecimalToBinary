@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+	<color name="homebrew_green">#0A782F</color>
+
+	<style name="HomebrewTheme">
+    	<item name="android:colorPrimary">@color/homebrew_green</item>
+	</style>
+
+</resources>

@@ -1,12 +1,16 @@
 package com.jaylecavalier.decimaltobinary;
 
 // Android stuff
+import android.app.ActivityManager;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
 // ActionBarSherlock stuff
+import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
 
 // My stuff
@@ -16,6 +20,7 @@ public class MainActivity extends SherlockFragmentActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setupActionBar();
 		setContentView(R.layout.main);
 	}
 
@@ -32,6 +37,13 @@ public class MainActivity extends SherlockFragmentActivity {
 				displayResult("Cannot convert input :(");
 			}
 		}
+	}
+
+	private void setupActionBar() {
+		ActionBar ab = getSupportActionBar();
+		int c = Color.parseColor("#0A782F");
+		ColorDrawable cd = new ColorDrawable(c);
+		ab.setBackgroundDrawable(cd);
 	}
 
 	private boolean isEmpty(EditText etext) {
