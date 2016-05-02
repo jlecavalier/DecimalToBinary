@@ -2,6 +2,7 @@
 <resources>
 
 	<color name="homebrew_green">#0A782F</color>
+	<color name="homebrew_blue">#7AA4E3</color>
 
 	<style name="HomebrewTheme">
     	<item name="android:colorPrimary">@color/homebrew_green</item>

@@ -7,6 +7,7 @@ import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -25,6 +26,7 @@ public class MainActivity extends SherlockFragmentActivity {
 		setupActionBar();
 		setContentView(R.layout.main);
 		setFonts();
+		setButtonColors();
 	}
 
 	public void convert(View view) {
@@ -51,6 +53,18 @@ public class MainActivity extends SherlockFragmentActivity {
 			if (mainLayout.getChildAt(i) instanceof TextView) {
 				TextView tv = (TextView) mainLayout.getChildAt(i);
 				tv.setTypeface(monoFont);
+				tv.setTextColor(getResources().getColor(R.color.homebrew_green));
+			}
+		}
+	}
+
+	private void setButtonColors() {
+		LinearLayout mainLayout = (LinearLayout) findViewById(R.id.main_layout);
+		for (int i = 0; i < mainLayout.getChildCount(); i++) {
+			if (mainLayout.getChildAt(i) instanceof Button) {
+				Button b = (Button) mainLayout.getChildAt(i);
+				b.setBackgroundColor(getResources().getColor(R.color.homebrew_green));
+				b.setTextColor(getResources().getColor(R.color.homebrew_blue));
 			}
 		}
 	}
