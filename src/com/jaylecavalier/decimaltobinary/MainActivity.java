@@ -3,10 +3,12 @@ package com.jaylecavalier.decimaltobinary;
 // Android stuff
 import android.app.ActivityManager;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 // ActionBarSherlock stuff
@@ -22,6 +24,7 @@ public class MainActivity extends SherlockFragmentActivity {
 		super.onCreate(savedInstanceState);
 		setupActionBar();
 		setContentView(R.layout.main);
+		setFonts();
 	}
 
 	public void convert(View view) {
@@ -35,6 +38,19 @@ public class MainActivity extends SherlockFragmentActivity {
 			}
 			catch (NumberFormatException e) {
 				displayResult("Cannot convert input :(");
+			}
+		}
+	}
+
+	private void setFonts() {
+		// Get a handle for the mono font
+		Typeface monoFont = Typeface.createFromAsset(getAssets(), "fonts/FreeMono.ttf");
+
+		LinearLayout mainLayout = (LinearLayout) findViewById(R.id.main_layout);
+		for (int i = 0; i < mainLayout.getChildCount(); i++) {
+			if (mainLayout.getChildAt(i) instanceof TextView) {
+				TextView tv = (TextView) mainLayout.getChildAt(i);
+				tv.setTypeface(monoFont);
 			}
 		}
 	}
