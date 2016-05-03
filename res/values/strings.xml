@@ -7,4 +7,9 @@
 	<string name="binary">Binary:</string>
 	<!-- Buttons -->
 	<string name="convert">Convert</string>
+	<!-- Spinners -->
+	<string-array name="number_systems_spinner">
+		<item>Decimal</item>
+		<item>Binary</item>
+	</string-array>
 </resources>
